@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class Sales extends StatelessWidget {
-  const Sales({Key? key}) : super(key: key);
+class Produtos extends StatelessWidget {
+  const Produtos({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -10,7 +10,7 @@ class Sales extends StatelessWidget {
         height: double.infinity,
         color: Colors.orange,
         child: Center(        
-          child: Text("Sales!"),
+          child: Text("Produtos!"),
           ),
       );      
   }

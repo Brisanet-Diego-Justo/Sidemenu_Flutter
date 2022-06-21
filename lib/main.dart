@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/route_manager.dart';
+import 'package:side_menu/views/cadastro.dart';
 import 'package:side_menu/views/dashboard.dart';
 import 'package:side_menu/views/sales.dart';
 import 'package:url_strategy/url_strategy.dart';
@@ -35,7 +36,8 @@ class MasterPage extends StatelessWidget {
   MasterPage() {
      Map<String, Widget> InnterRoutes = {
       'home':Dashboard(),
-      'sale':Sales(),  
+      'produtos':Produtos(),
+      'cadastro-usuario':CadastroUsuario(), 
     };
     InnerView = InnterRoutes[Get.parameters['page_name']]!; // Já aqui eu permitir que a variável fosse iniciada como null, "pelo menos é o que eu acho que fiz!"
   }
@@ -64,21 +66,31 @@ class MasterPage extends StatelessWidget {
                           )
                       )
                     ),
-                    ListTile(
-                      hoverColor: Colors.white,
-                      leading: Icon(Icons.menu),
+                    ListTile(      
+                      textColor: Colors.white,
+                      leading: Icon(Icons.menu,  color: Colors.white,),
                       title: Text('Dashboard'),
                       onTap: (){
                         Get.toNamed('/home');
                       },
                     ),
                     ListTile(
-                      hoverColor: Colors.white,
-                      leading: Icon(CupertinoIcons.square_favorites_alt),
-                      title: Text('Sales'),
+                      textColor: Colors.white,
+                      leading: Icon(CupertinoIcons.square_favorites_alt, color: Colors.white,),
+                      title: Text('Produtos'),
                       onTap: (){
-                        Get.toNamed('/sale');
+                        Get.toNamed('/produtos');
                       },
+                      
+                    ),
+                    ListTile(
+                      textColor: Colors.white,
+                      leading: Icon(CupertinoIcons.person_3_fill, color: Colors.white,),
+                      title: Text('Usuários'),
+                      onTap: (){
+                        Get.toNamed('/cadastro-usuario');
+                      },
+                      
                     ),
                   ],
                 )
